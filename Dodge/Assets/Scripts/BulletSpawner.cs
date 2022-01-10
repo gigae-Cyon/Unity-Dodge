@@ -30,4 +30,14 @@ public class BulletSpawner : MonoBehaviour
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
         }
     }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
+            PlayerController playerController = other.GetComponent<PlayerController>();
+
+            if (playerController != null) {
+                playerController.Die();
+            }
+        }
+    }
 }

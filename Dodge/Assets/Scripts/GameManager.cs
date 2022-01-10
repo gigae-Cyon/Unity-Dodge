@@ -22,10 +22,16 @@ public class GameManager : MonoBehaviour
         if (!isGameover) {
             surviveTime += Time.deltaTime;
             timeText.text = "Time: " + (int)surviveTime;
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
         else {
             if (Input.GetKeyDown(KeyCode.R)) {
                 SceneManager.LoadScene("SampleScene");
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape)) {
+                SceneManager.LoadScene("MainMenu");
             }
         }
     }
