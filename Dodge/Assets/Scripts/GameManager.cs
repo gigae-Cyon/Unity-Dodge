@@ -14,10 +14,16 @@ public class GameManager : MonoBehaviour
 
     private float surviveTime;
     private bool isGameover;
+    private Scene currentScene;
+    private string difficulty;
 
     void Start() {
         surviveTime = 0;
         isGameover = false;
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "NormalScene") {difficulty = "Normal";}
+        else if (currentScene.name == "HardScene") {difficulty = "Hard";}
+        else if (currentScene.name == "CrazyScene") {difficulty = "Crazy";}
     }
 
     void Update() {
@@ -30,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
         else {
             if (Input.GetKeyDown(KeyCode.R)) {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene(currentScene.name);
             }
             else if (Input.GetKeyDown(KeyCode.Escape)) {
                 SceneManager.LoadScene("MainMenu");
@@ -43,11 +49,11 @@ public class GameManager : MonoBehaviour
         gameoverText.SetActive(true);
 
         surviveTime = TruncateScoreFloatingPoint(surviveTime);
-        float bestTime = PlayerPrefs.GetFloat("BestTime");
+        float bestTime = PlayerPrefs.GetFloat(difficulty);
 
         if (surviveTime > bestTime) {
             bestTime = surviveTime;
-            PlayerPrefs.SetFloat("BestTime", bestTime);
+            PlayerPrefs.SetFloat(difficulty, bestTime);
             newRecordText.SetActive(true);
         }
 
