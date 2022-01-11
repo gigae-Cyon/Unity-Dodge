@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 581143807}
   - component: {fileID: 581143810}
   m_Layer: 5
-  m_Name: Button_Normal
+  m_Name: Button_Hard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 581143810}
         m_TargetAssemblyTypeName: GameStartButton, Assembly-CSharp
-        m_MethodName: GameStart
+        m_MethodName: GameStartHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2434,6 +2434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordResetPanel: {fileID: 968689541}
+  howToPanel: {fileID: 736730300}
 --- !u!1 &1784621001
 GameObject:
   m_ObjectHideFlags: 0

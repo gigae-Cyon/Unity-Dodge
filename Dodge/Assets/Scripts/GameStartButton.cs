@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GameStartButton : MonoBehaviour
 {
-    public void GameStart() {
-        SceneManager.LoadScene("SampleScene");
+    public void GameStartNormal() {
+        SceneManager.LoadScene("NormalScene");
+    }
+    public void GameStartHard() {
+        SceneManager.LoadScene("HardScene");
+    }
+    public void GameStartCrazy() {
+        SceneManager.LoadScene("CrazyScene");
     }
     
 }
