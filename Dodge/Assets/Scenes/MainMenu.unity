@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -44.5}
-  m_SizeDelta: {x: 330, y: 115}
+  m_AnchoredPosition: {x: 0, y: -0.0014954}
+  m_SizeDelta: {x: 330, y: 120.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &55190705
 MonoBehaviour:
@@ -846,7 +846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 286.5791, y: 146.3818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736730302
@@ -1112,10 +1112,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 793212820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37836b3746722ec429815ffb4924c9cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 145c879ec10a1e84bac9f100ad6414d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howToPanel: {fileID: 736730300}
+  panel: {fileID: 736730300}
+  buttonToDisable: {fileID: 1776089965}
 --- !u!114 &793212823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,8 +1162,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 793212822}
-        m_TargetAssemblyTypeName: HowToPlayButton, Assembly-CSharp
-        m_MethodName: OpenHowToPanel
+        m_TargetAssemblyTypeName: OpenButton, Assembly-CSharp
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1247,7 +1248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 330, y: 146.3818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &968689543
@@ -1434,7 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8cf71b68e61114f8c6b2c944b04bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 736730300}
+  panel: {fileID: 736730300}
+  buttonToEnable: {fileID: 1776089965}
 --- !u!1 &1003057133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,6 +1917,7 @@ GameObject:
   - component: {fileID: 1383301424}
   - component: {fileID: 1383301423}
   - component: {fileID: 1383301422}
+  - component: {fileID: 1383301426}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -1954,7 +1957,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8cf71b68e61114f8c6b2c944b04bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 55190703}
+  panel: {fileID: 55190703}
+  buttonToEnable: {fileID: 793212823}
 --- !u!114 &1383301423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +2015,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1383301426}
+        m_TargetAssemblyTypeName: CloseButton, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1383301424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2049,6 +2065,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383301420}
   m_CullTransparentMesh: 1
+--- !u!114 &1383301426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383301420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8cf71b68e61114f8c6b2c944b04bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 55190703}
+  buttonToEnable: {fileID: 1776089965}
 --- !u!1 &1453449746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,10 +2286,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570792758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c876280828f68e54cb94f9f984e0ea0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c8cf71b68e61114f8c6b2c944b04bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordResetPanel: {fileID: 968689541}
+  panel: {fileID: 968689541}
+  buttonToEnable: {fileID: 793212823}
 --- !u!114 &1570792761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2305,8 +2336,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1570792760}
-        m_TargetAssemblyTypeName: RecordResetPanelNoButton, Assembly-CSharp
-        m_MethodName: CloseRecordResetPanel
+        m_TargetAssemblyTypeName: CloseButton, Assembly-CSharp
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2678,8 +2709,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1776089968}
-        m_TargetAssemblyTypeName: ResetRecordButton, Assembly-CSharp
-        m_MethodName: OpenRecordResetPanel
+        m_TargetAssemblyTypeName: OpenButton, Assembly-CSharp
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2736,11 +2767,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1776089963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d504f55b6da5f44bebe7d7b46c49e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 145c879ec10a1e84bac9f100ad6414d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordResetPanel: {fileID: 968689541}
-  howToPanel: {fileID: 736730300}
+  panel: {fileID: 968689541}
+  buttonToDisable: {fileID: 793212823}
 --- !u!1 &1784621001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,6 +2784,7 @@ GameObject:
   - component: {fileID: 1784621006}
   - component: {fileID: 1784621005}
   - component: {fileID: 1784621004}
+  - component: {fileID: 1784621007}
   - component: {fileID: 1784621003}
   m_Layer: 5
   m_Name: Yes Button
@@ -2790,11 +2822,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1784621001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d9c19509202d7488063bc30bd23788, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c8cf71b68e61114f8c6b2c944b04bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordResetPanel: {fileID: 968689541}
-  recordResetConfirmPanel: {fileID: 55190703}
+  panel: {fileID: 968689541}
+  buttonToEnable: {fileID: 0}
 --- !u!114 &1784621004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2839,9 +2871,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1784621007}
+        m_TargetAssemblyTypeName: OpenButton, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1784621003}
-        m_TargetAssemblyTypeName: RecordResetPanelYesButton, Assembly-CSharp
-        m_MethodName: ResetRecord
+        m_TargetAssemblyTypeName: CloseButton, Assembly-CSharp
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2889,6 +2933,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784621001}
   m_CullTransparentMesh: 1
+--- !u!114 &1784621007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784621001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145c879ec10a1e84bac9f100ad6414d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 55190703}
+  buttonToDisable: {fileID: 1776089965}
 --- !u!1 &1887780576
 GameObject:
   m_ObjectHideFlags: 0
