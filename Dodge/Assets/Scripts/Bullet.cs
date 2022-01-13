@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         bulletRigidbody = GetComponent<Rigidbody>();
         bulletRigidbody.velocity = transform.forward * speed;
 
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 5f);
     }
 
     void OnTriggerEnter(Collider other) {
